@@ -1,0 +1,4 @@
+Resume Analyzer
+Utilizes OpenAi API to help users tailor their resume for job applications
+
+Allows users to submit the job description as well as a file of their resume. THey also have the option to add additional requests for what the output with be.
