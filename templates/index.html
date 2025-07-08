@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>AI Resume Analyzer</h1>
+      <form action="/" method="POST" enctype="multipart/form-data">
+    <label for="jdesc">Job Description:</label>
+    <input type="text" name="jdesc" id="jdesc" size="50" required>
+    <br><br>
+
+    <label for="resume">Resume:</label>
+    <input type="file" name="resume" id="resume">
+    <br><br>
+
+    <label for="extra">Extra Request (Optional):</label>
+    <input type="text" name="extra" id="extra">
+    <br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+</body>
+</html>
