@@ -1,5 +1,9 @@
 from flask import Flask, request, render_template, url_for
 import os
+from openai import OpenAI
+from config import API_KEY
+
+oai = OpenAI(API_KEY)
 
 app = Flask(__name__)
 
