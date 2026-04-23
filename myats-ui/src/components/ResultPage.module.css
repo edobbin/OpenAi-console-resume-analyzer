@@ -1,0 +1,288 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ── Header ── */
+.header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+}
+
+.logoRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoMark {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  background: var(--primary);
+  color: #fff;
+  border-radius: 9px;
+}
+
+.logoText {
+  font-size: 20px;
+  letter-spacing: -0.5px;
+  color: var(--text);
+}
+
+.logoText strong {
+  color: var(--primary);
+}
+
+.backBtn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  background: none;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: border-color 0.15s, color 0.15s;
+}
+
+.backBtn:hover {
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+/* ── Main ── */
+.main {
+  flex: 1;
+  width: 100%;
+  max-width: 720px;
+  padding: 16px 20px 56px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* ── Shared card ── */
+.scoreCard,
+.jobCard,
+.card {
+  background: var(--surface);
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  padding: 28px;
+}
+
+/* ── Top row: score + job info ── */
+.topRow {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 20px;
+}
+
+@media (max-width: 560px) {
+  .topRow {
+    grid-template-columns: 1fr;
+  }
+}
+
+.scoreCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.cardEyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  align-self: flex-start;
+}
+
+.jobCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.jobTitle {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  color: var(--text);
+  line-height: 1.25;
+  margin-top: 4px;
+}
+
+.company {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--primary);
+}
+
+.metaList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.metaItem svg {
+  flex-shrink: 0;
+  color: var(--text-secondary);
+}
+
+/* ── Apply banner ── */
+.applyBanner {
+  border-radius: 14px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.applyYes {
+  background: #ECFDF5;
+  border: 1.5px solid #6EE7B7;
+}
+
+.applyNo {
+  background: #FEF2F2;
+  border: 1.5px solid #FCA5A5;
+}
+
+.applyIcon {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.applyYes .applyIcon {
+  background: #10B981;
+  color: #fff;
+}
+
+.applyNo .applyIcon {
+  background: #EF4444;
+  color: #fff;
+}
+
+.applyText {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.applyText strong {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.applyText span {
+  font-size: 14px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ── Improvements card ── */
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.sectionTitle svg {
+  color: var(--primary);
+  flex-shrink: 0;
+}
+
+.sectionSub {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-bottom: 20px;
+}
+
+.improvementList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.improvementItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.itemNumber {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  font-size: 12px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.itemText {
+  font-size: 14px;
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ── Footer ── */
+.footer {
+  padding: 20px;
+  font-size: 12px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .header {
+    padding: 16px 18px;
+  }
+
+  .scoreCard,
+  .jobCard,
+  .card {
+    padding: 20px 18px;
+  }
+}

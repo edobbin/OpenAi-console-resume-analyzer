@@ -219,6 +219,13 @@
   to { transform: rotate(360deg); }
 }
 
+.submitError {
+  text-align: center;
+  font-size: 13px;
+  color: var(--danger);
+  margin-top: 10px;
+}
+
 .formHint {
   text-align: center;
   font-size: 13px;

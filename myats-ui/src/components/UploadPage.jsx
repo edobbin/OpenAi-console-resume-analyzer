@@ -3,13 +3,14 @@ import ResumeDropzone from './ResumeDropzone'
 import JobDescInput from './JobDescInput'
 import styles from './UploadPage.module.css'
 
-export default function UploadPage() {
+export default function UploadPage({ onResult }) {
   const [resumeFile, setResumeFile] = useState(null)
   const [jdMode, setJdMode] = useState('paste')
   const [jdText, setJdText] = useState('')
   const [jdUrl, setJdUrl] = useState('')
   const [extraPrompt, setExtraPrompt] = useState('')
   const [loading, setLoading] = useState(false)
+  const [error, setError] = useState(null)
 
   const jobDescFilled = jdMode === 'paste' ? jdText.trim().length > 0 : jdUrl.trim().length > 0
   const canSubmit = resumeFile && jobDescFilled && !loading
@@ -18,9 +19,23 @@ export default function UploadPage() {
     e.preventDefault()
     if (!canSubmit) return
     setLoading(true)
-    // API integration point — backend call goes here
-    await new Promise((r) => setTimeout(r, 1500))
-    setLoading(false)
+    setError(null)
+    try {
+      // API integration point — replace with real fetch to your backend
+      // const formData = new FormData()
+      // formData.append('resume', resumeFile)
+      // formData.append('job_description', jdText)
+      // formData.append('job_url', jdUrl)
+      // formData.append('extra', extraPrompt)
+      // const res = await fetch('/api/analyze', { method: 'POST', body: formData })
+      // const result = await res.json()
+      // onResult(result)
+      await new Promise((r) => setTimeout(r, 1500))
+    } catch {
+      setError('Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -112,6 +127,8 @@ export default function UploadPage() {
               </>
             )}
           </button>
+
+          {error && <p className={styles.submitError}>{error}</p>}
 
           {!resumeFile && !jobDescFilled && (
             <p className={styles.formHint}>Upload your resume and add a job description to get started.</p>
