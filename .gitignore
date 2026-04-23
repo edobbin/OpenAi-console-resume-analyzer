@@ -1,2 +1,5 @@
 /script.py
 /config.py
+# React / Vite
+myats-ui/node_modules/
+myats-ui/dist/

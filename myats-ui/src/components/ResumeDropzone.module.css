@@ -1,0 +1,124 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.zone {
+  border: 2px dashed var(--border);
+  border-radius: var(--radius);
+  padding: 36px 24px;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.18s, background 0.18s;
+  background: var(--bg);
+  outline: none;
+}
+
+.zone:hover,
+.zone:focus-visible {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.dragging {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+
+.hasFile {
+  cursor: default;
+  border-style: solid;
+  border-color: var(--primary);
+  background: var(--primary-light);
+  padding: 20px 24px;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.uploadIcon {
+  display: flex;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.dropText {
+  font-size: 15px;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.browseLink {
+  color: var(--primary);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.hint {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.filePreview {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  text-align: left;
+}
+
+.fileIconLarge {
+  font-size: 32px;
+  flex-shrink: 0;
+}
+
+.fileInfo {
+  flex: 1;
+  min-width: 0;
+}
+
+.fileName {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.fileSize {
+  display: block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 2px;
+}
+
+.removeBtn {
+  flex-shrink: 0;
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, color 0.15s;
+}
+
+.removeBtn:hover {
+  background: var(--danger);
+  color: #fff;
+  border-color: var(--danger);
+}
+
+.error {
+  font-size: 13px;
+  color: var(--danger);
+}
