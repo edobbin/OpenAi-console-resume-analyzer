@@ -1,4 +1,5 @@
-Flask
+FastAPI
+uvicorn
 OpenAI
 PyMuPDF
 Google
