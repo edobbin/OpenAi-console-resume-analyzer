@@ -2,8 +2,6 @@ from fastapi import APIRouter
 
 router = APIRouter()
 
-
-
 # Endpoint for getting JD from front end to send to openAI for analysis
 @router.post("/job-description")
 def post_job_description(job_description: str):
