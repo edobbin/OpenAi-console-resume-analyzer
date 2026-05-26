@@ -5,6 +5,10 @@ def parse_resume(content: bytes, filename: str) -> str:
 
     if filename.endswith(".txt"):
         return parse_txt(content)
+    elif filename.endswith(".docx"):
+        return parese_docx(content)
+    elif filename.endswith(".pdf"):
+        return parse_pdf(content)
 
     return "Parsing for this file type is not supported yet."
 

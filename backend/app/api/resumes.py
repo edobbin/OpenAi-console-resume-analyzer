@@ -1,4 +1,5 @@
 from fastapi import APIRouter, HTTPException, UploadFile, File
+from app.services.resume_parser import parse_resume
 
 router = APIRouter()
 
@@ -14,9 +15,11 @@ async def upload_resume(resume: UploadFile = File(...)):
             detail="Invalid file format. Please upload a PDF, DOCX, or TXT file."
         )
     content = await resume.read()
+    parsed_text = parse_resume(content, resume.filename)
     return {
         "message": "Resume received successfully",
         "size": len(content),
         "filename": resume.filename,
         "content_type": resume.content_type,
+        "parsed_text": parsed_text
     }
