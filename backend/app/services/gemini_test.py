@@ -16,7 +16,7 @@ def generate_text():
     # Make a text generation request using the recommended model
     response = client.models.generate_content(
         model="gemini-2.5-flash",
-        contents="Give me a 3-bullet-point summary explaining the benefits of Python virtual environments."
+        contents="what day of the week is it?"
     )
     
     # Print the model's textual output
