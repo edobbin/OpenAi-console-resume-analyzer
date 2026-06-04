@@ -1,2 +1,8 @@
 /script.py
 /config.py
+/gemini info.txt
+/Backend/.env
+/Backend/app/services/.env
+Backend/.venv/Scripts/pythonw.exe
+backend/.venv
+backend/.env

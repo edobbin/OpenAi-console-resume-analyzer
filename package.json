@@ -1,0 +1,15 @@
+{
+  "name": "resume-analyzer",
+  "private": true,
+  "scripts": {
+    "backend": "cd Backend && .\\.venv\\Scripts\\python -m uvicorn app.main:app --reload",
+    "frontend": "cd Frontend && npm run dev",
+    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
+    "install-frontend": "cd Frontend && npm install",
+    "install-backend": "cd Backend && .\\.venv\\Scripts\\pip install -r requirements.txt",
+    "freeze-backend": "cd Backend && .\\.venv\\Scripts\\pip freeze > requirements.txt"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.0"
+  }
+}
