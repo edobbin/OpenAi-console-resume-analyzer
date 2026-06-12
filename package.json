@@ -2,21 +2,12 @@
   "name": "resume-analyzer",
   "private": true,
   "scripts": {
-<<<<<<< HEAD
     "backend": "cd Backend && .\\.venv\\Scripts\\python -m uvicorn app.main:app --reload",
     "frontend": "cd Frontend && npm run dev",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "install-frontend": "cd Frontend && npm install",
     "install-backend": "cd Backend && .\\.venv\\Scripts\\pip install -r requirements.txt",
     "freeze-backend": "cd Backend && .\\.venv\\Scripts\\pip freeze > requirements.txt"
-=======
-    "backend": "cd Backend && python -m uvicorn app.main:app --reload",
-    "frontend": "cd Frontend && npm run dev",
-    "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
-    "install-frontend": "cd Frontend && npm install",
-    "install-backend": "cd Backend && pip install -r requirements.txt",
-    "freeze-backend": "cd Backend && pip freeze > requirements.txt"
->>>>>>> 084ac436a45c554e907c5ed6e52425adf36c2437
   },
   "devDependencies": {
     "concurrently": "^9.0.0"
