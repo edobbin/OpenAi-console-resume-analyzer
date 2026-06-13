@@ -6,7 +6,7 @@
     "frontend": "cd frontend && npm run dev",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "install-frontend": "cd frontend && npm install",
-    "install-backend": "cd backend && .\\.venv\\Scripts\\pip install -r requirements.txt",
+    "install-backend": "cd backend && .\\.venv\\Scripts\\python -m pip install -r requirements.txt",
     "freeze-backend": "cd backend && .\\.venv\\Scripts\\pip freeze > requirements.txt"
   },
   "devDependencies": {

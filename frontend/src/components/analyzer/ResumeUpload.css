@@ -1,0 +1,94 @@
+.resume-upload-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 24px;
+  padding: 28px;
+}
+
+.resume-upload-header {
+  margin-bottom: 20px;
+}
+
+.step-label {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.helper-text {
+  margin: 6px 0 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.resume-dropzone {
+  min-height: 190px;
+  border: 2px dashed var(--color-border);
+  border-radius: 20px;
+  background: var(--color-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.resume-dropzone:hover,
+.resume-dropzone--active {
+  border-color: var(--color-primary);
+  background: var(--color-primary-soft);
+  transform: translateY(-1px);
+}
+
+.resume-file-input {
+  display: none;
+}
+
+.resume-empty-state,
+.resume-selected-file {
+  text-align: center;
+}
+
+.resume-file-icon {
+  font-size: 2.3rem;
+  margin-bottom: 12px;
+}
+
+.resume-empty-state h3,
+.resume-selected-file h3 {
+  margin: 0;
+  color: var(--color-text);
+  font-size: 1.05rem;
+  font-weight: 800;
+}
+
+.resume-empty-state p,
+.resume-selected-file p {
+  margin: 8px 0 0;
+  color: var(--color-muted);
+  font-size: 0.95rem;
+}
+
+.remove-file-button {
+  margin-top: 16px;
+  border: none;
+  background: transparent;
+  color: var(--color-danger);
+  font-weight: 700;
+  cursor: pointer;
+  padding: 0;
+}
+
+.remove-file-button:hover {
+  text-decoration: underline;
+}
+
+.resume-upload-error {
+  margin: 16px 0 0;
+  color: var(--color-danger);
+  font-size: 0.95rem;
+  font-weight: 600;
+}
