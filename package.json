@@ -6,8 +6,12 @@
     "frontend": "cd frontend && npm run dev",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
     "install-frontend": "cd frontend && npm install",
+    "create-backend-venv": "cd backend && python -m venv .venv",
+    "upgrade-backend-pip": "cd backend && .\\.venv\\Scripts\\python -m pip install --upgrade pip",
     "install-backend": "cd backend && .\\.venv\\Scripts\\python -m pip install -r requirements.txt",
-    "freeze-backend": "cd backend && .\\.venv\\Scripts\\pip freeze > requirements.txt"
+    "freeze-backend": "cd backend && .\\.venv\\Scripts\\pip freeze > requirements.txt",
+    "build-dev-env": "install-frontend && create-backend-venv && upgrade-backend-pip && install-backend",
+    "start-dev-mode": "npm run build-dev-env && npm run dev"
   },
   "devDependencies": {
     "concurrently": "^9.0.0"

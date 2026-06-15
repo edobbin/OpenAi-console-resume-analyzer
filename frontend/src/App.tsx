@@ -1,10 +1,11 @@
 import { useState } from "react";
 import Navbar from "./components/layout/Navbar";
 import ResumeUpload from "./components/analyzer/ResumeUpload";
+import JobDescription from "./components/analyzer/JobDescription";
 
 function App() {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
-
+  const [jobDescription, setJobDescription] = useState<string>("");
   return (
     <>
       <Navbar />
@@ -25,9 +26,11 @@ function App() {
             onFileSelect={setResumeFile}
           />
 
-          <section className="placeholder-section">
-            <h2>Job Description</h2>
-            <p>Textarea component will go here.</p>
+          <section id="analyzer" className="analyzer-grid">
+            <JobDescription
+              jobDescription={jobDescription}
+              onJobDescriptionChange={setJobDescription}
+            />
           </section>
         </section>
       </main>

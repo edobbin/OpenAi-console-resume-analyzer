@@ -1,0 +1,11 @@
+FastAPI
+uvicorn
+OpenAI
+PyMuPDF
+Google
+pymupdf
+python-docx
+python-multipart
+google-genai
+pymongo
+ 
