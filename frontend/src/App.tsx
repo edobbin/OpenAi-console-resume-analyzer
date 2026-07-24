@@ -2,6 +2,7 @@ import { useState } from "react";
 import Navbar from "./components/layout/Navbar";
 import ResumeUpload from "./components/analyzer/ResumeUpload";
 import JobDescription from "./components/analyzer/JobDescription";
+import AnalyzerForm from "./components/analyzer/AnalyzerForm";
 
 function App() {
   const [resumeFile, setResumeFile] = useState<File | null>(null);
@@ -20,7 +21,7 @@ function App() {
           </p>
         </section>
 
-        <section id="analyzer" className="analyzer-grid">
+        {/* <section id="analyzer" className="analyzer-grid">
           <ResumeUpload
             selectedFile={resumeFile}
             onFileSelect={setResumeFile}
@@ -32,7 +33,9 @@ function App() {
               onJobDescriptionChange={setJobDescription}
             />
           </section>
-        </section>
+        </section> */}
+
+        <AnalyzerForm />
       </main>
     </>
   );

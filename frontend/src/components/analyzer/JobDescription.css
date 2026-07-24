@@ -1,0 +1,15 @@
+.job-description-card {
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  min-width: 50dvh;
+  border-radius: 24px;
+  padding: 28px;
+  background:rgb(238, 238, 238);
+  outline-style: solid;
+  outline-width: 1px;
+  outline-color:rgb(190, 190, 190);
+}
+
+.job-description-header {
+  margin-bottom: 20px;
+}

@@ -9,7 +9,7 @@ function JobDescription({ jobDescription, onJobDescriptionChange }:jobDescriptio
     const isFilled = jobDescription.trim().length > 0;
 
   return (
-    <div>
+    <section className="job-description-card">
     <div className="job-description-header">
         <p className="step-label">2. Upload Job Description</p>
         <p className="helper-text">copy and paste the job description here</p>
@@ -23,7 +23,7 @@ function JobDescription({ jobDescription, onJobDescriptionChange }:jobDescriptio
       <p className="word-count">{jobDescription.length} characters</p>
       {isFilled && <p className="filled-indicator">Job description is filled</p>}
     </div>
-    </div>
+    </section>
   );
 }
 

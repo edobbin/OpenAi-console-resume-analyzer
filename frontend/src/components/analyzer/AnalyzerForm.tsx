@@ -8,16 +8,24 @@ function AnalyzerForm() {
 
       async function handleSubmit(event : React.FormEvent<HTMLFormElement>) {
         event.preventDefault();
-        if (!resumeFile) return;
-        if (jobDescription.trim().length < 100) return;
+        if (!resumeFile) {
+          console.error("No resume selected");
+          return;
+        }
+        if (jobDescription.trim().length < 100) {
+          console.error("Job description is too short");
+          return;
+        }
 
         const formData = new FormData();
         formData.append("resume", resumeFile);
         formData.append("jobDescription", jobDescription);
 
         // Example API call (replace with your actual endpoint)
+        // const response = await fetch("/api/analyze", {
         const response = await fetch("/api/analyze", {
-          method: "POST",
+
+        method: "POST",
           body: formData,
         });
 
@@ -46,7 +54,9 @@ function AnalyzerForm() {
         jobDescription={jobDescription}
         onJobDescriptionChange={setJobDescription}
       />
-      <button type="submit">Analyze Resume</button>
+      <button type= "submit">
+        Analyze Resume
+      </button>
       </form>
     </div>
   );
