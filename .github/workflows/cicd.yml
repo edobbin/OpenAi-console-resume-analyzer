@@ -30,7 +30,7 @@ jobs:
         run: npm install
 
       - name: Install frontend dependencies
-        run: npm run setup-frontend
+        run: npm run ci-frontend
 
       - name: Install backend dependencies
-        run: npm run setup-backend
+        run: npm run ci-backend
