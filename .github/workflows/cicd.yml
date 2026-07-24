@@ -34,3 +34,26 @@ jobs:
 
       - name: Install backend dependencies
         run: npm run ci-backend
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    needs: install-dependencies
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '24'
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.14"
+
+      - name: Build frontend
+        run: npm run build-frontend
+
+      - name: Build backend
+        run: npm run build-backend
