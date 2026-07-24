@@ -1,1 +1,39 @@
+name: MyATS
 
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  install-root:
+    runs-on: ubuntu-latest
+    container:
+      image: node:20
+    steps:
+      - uses: actions/checkout@v3
+        with: 
+          node-version: '20'
+      - run: npm install
+      
+  build-frontend:
+    runs-on: ubuntu-latest
+    container:
+      image: node:20
+    steps:
+      - uses: actions/checkout@v3
+        with: 
+          node-version: '20'
+      - run: npm run "ci-frontend"
+  # build-backend:
+  #   runs-on: ubuntu-latest
+  #   container:
+  #     image: node:20
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #       with: 
+  #         node-version: '20'
+  #     - run: npm run "ci-backend"

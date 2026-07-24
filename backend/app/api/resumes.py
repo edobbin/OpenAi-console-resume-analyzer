@@ -12,4 +12,5 @@ async def upload_resume(resume: UploadFile = File(...)):
     return {
         "message": "Resume parsed successfully",
         **resume_result,
+        
     }

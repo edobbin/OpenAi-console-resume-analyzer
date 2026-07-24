@@ -3,6 +3,7 @@ import ResumeUpload from "./ResumeUpload";
 import JobDescription from "./JobDescription";
 
 function AnalyzerForm() {
+    const API_URL = import.meta.env.VITE_API_URL;
     const [resumeFile, setResumeFile] = useState<File | null>(null);
     const [jobDescription, setJobDescription] = useState<string>("");
 
@@ -12,10 +13,10 @@ function AnalyzerForm() {
           console.error("No resume selected");
           return;
         }
-        if (jobDescription.trim().length < 100) {
-          console.error("Job description is too short");
-          return;
-        }
+        // if (jobDescription.trim().length < 100) {
+        //   console.error("Job description is too short");
+        //   return;
+        // }
 
         const formData = new FormData();
         formData.append("resume", resumeFile);
@@ -23,15 +24,27 @@ function AnalyzerForm() {
 
         // Example API call (replace with your actual endpoint)
         // const response = await fetch("/api/analyze", {
-        const response = await fetch("/api/analyze", {
+
+        try{
+        const response = await fetch(`${API_URL}/resume/upload`, {
 
         method: "POST",
           body: formData,
         });
 
+        const data = await response.json();
+
         if (!response.ok) {
           throw new Error("Failed to analyze resume");
+          return;
         }
+
+        console.log("API Response:", data);
+        console.log("Parsed Resume:", data.parsed_text);
+
+      } catch (error) {
+        console.error("Error analyzing resume:", error);
+      }
 
       }
 
