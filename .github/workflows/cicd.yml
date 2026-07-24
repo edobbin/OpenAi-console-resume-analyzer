@@ -9,37 +9,28 @@ on:
       - main
 
 jobs:
-  - name: Install Dependencies
-
-  install-root:
+  install-dependencies:
+    name: Install Dependencies
     runs-on: ubuntu-latest
-    container:
-      image: node:20
     steps:
-      - uses: actions/checkout@v3
-        with: 
-          node-version: '20'
-      - run: npm install
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-  build-frontend:
-    runs-on: ubuntu-latest
-    container:
-      image: node:20
-    steps:
-      - uses: actions/checkout@v3
-        with: 
-          node-version: '20'
-      - run: npm run "ci-frontend"
-
-  build-backend:
-    runs-on: ubuntu-latest
-    container:
-      image: node:20
-    steps:
-      - uses: actions/checkout@v3
-        with: 
-          node-version: '20'
-      - uses: actions/setup-python@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
         with:
-          python-version: "3.12"
-      - run: npm run "setup-backend"
+          node-version: '24'
+      
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.14"
+
+      - name: Install root dependencies
+        run: npm install
+
+      - name: Install frontend dependencies
+        run: npm run setup-frontend
+
+      - name: Install backend dependencies
+        run: npm run setup-backend
