@@ -18,6 +18,8 @@ def parse_txt(content: bytes) -> str:
 
 def parese_docx(content: bytes) -> str:
     # Placeholder for DOCX parsing logic
+
+    
     return "DOCX parsing is not implemented yet."
 
 def parse_pdf(content: bytes) -> str:

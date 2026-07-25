@@ -2,29 +2,22 @@
   "name": "resume-analyzer",
   "private": true,
   "scripts": {
-
     "frontend": "cd frontend && npm run dev",
     "backend": "cd backend && .\\.venv\\Scripts\\python -m uvicorn app.main:app --reload",
     "dev": "concurrently \"npm run backend\" \"npm run frontend\"",
-
     "build-frontend": "cd frontend && npm run dev",
     "build-backend": "cd backend && python -m uvicorn app.main:app --reload",
     "build-dev": "concurrently \"npm run build-backend\" \"npm run build-frontend\"",
-
     "setup-root": "npm install",
     "setup-frontend": "cd frontend && npm install",
     "ci-frontend": "cd frontend && npm ci",
     "setup-backend": "cd backend && python -m venv .venv && .\\.venv\\Scripts\\python -m pip install --upgrade pip && .\\.venv\\Scripts\\python -m pip install -r requirements.txt",
     "ci-backend": "cd backend && python -m pip install --upgrade pip && python -m pip install -r requirements.txt",
-
     "setup": "npm install && npm run setup-frontend && npm run setup-backend",
-
     "install-backend": "cd backend && .\\.venv\\Scripts\\python -m pip install -r requirements.txt",
     "freeze-backend": "cd backend && .\\.venv\\Scripts\\python -m pip freeze > requirements.txt",
-  
     "instal-backend": "cd backend && python -m pip install -r requirements.txt",
     "freez-backend": "cd backend && python -m pip freeze > requirements.txt"
-  
   },
   "devDependencies": {
     "concurrently": "^9.2.4"
