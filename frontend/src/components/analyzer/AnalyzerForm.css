@@ -1,0 +1,28 @@
+button {
+  margin: 10px;
+  color: var(--color-primary);
+  background: rgb(238, 238, 238);
+  border: 1px solid #bfdbfe;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  display: flex;
+  justify-content: center; /* Centers horizontally */
+  justify-self: center; /* Centers horizontally */
+  align-items: center;
+}
+button:hover {
+  background: white;
+  color: rgb(5, 5, 5);
+  cursor: pointer;
+  transition:
+    outline-color 0.2s ease,
+    background 0.2s ease,
+    color 0.2s ease;
+
+  outline-style: solid;
+  outline-color: black;
+  outline-width: 1px;
+}

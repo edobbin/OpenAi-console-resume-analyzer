@@ -1,0 +1,76 @@
+.ResultCard-container {
+  background: #ffffff;
+  border: 1px solid #dbe2ea;
+  border-radius: 12px;
+
+  padding: 14px 16px;
+  width: 100%;
+  min-width: 0;
+
+  box-sizing: border-box;
+}
+.ResultCard-container h3 {
+  display: flex;
+  justify-content: left;
+  margin: 0;
+}
+.Result-Mertic {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.ResultCard-container h3 {
+  margin: 0 0 10px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #64748b;
+}
+.ResultCard-container h1 {
+  margin: 0;
+  font-size: clamp(1.8rem, 3vw, 2.2rem);
+  line-height: 1;
+  font-weight: 700;
+  background: none;
+}
+
+.ResultCard-container p {
+  margin: 0;
+  padding: 3px 8px;
+
+  border: none;
+  border-radius: 999px;
+  margin-left: 0;
+  font-size: 0.65rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.metric-excellent {
+  color: #16a34a;
+  background: #dcfce7;
+}
+
+.metric-strong {
+  color: #16a34a;
+  background: #dcfce7;
+}
+
+.metric-good {
+  color: #d97706;
+  background: #fef3c7;
+}
+
+.metric-fair {
+  color: #2563eb;
+  background: #dbeafe;
+}
+
+.metric-weak {
+  color: #dc2626;
+  background: #fee2e2;
+}
+
+.metric-poor {
+  color: #991b1b;
+  background: #fecaca;
+}

@@ -1,0 +1,26 @@
+ul {
+  justify-content: center;
+  display: flex;
+  list-style: none;
+  padding: 0; /* Removes default left padding */
+  margin: auto; /* Removes default margins */
+  gap: max(10px, 2vw); /* Adjusts the gap between list items */
+  box-sizing: border-box;
+}
+
+.result-metrics-list {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.result-metrics-list li {
+  min-width: 0;
+}

@@ -7,7 +7,9 @@ function Navbar() {
   return (
     <header className="navbar">
       <div className="navbar__brand">
-        <span className="navbar__logo">MyATS</span>
+        <span className="navbar__logo">
+          <a href="/">MyATS</a>
+        </span>
         <span className="navbar__subtitle">AI Resume Analyzer</span>
       </div>
 
