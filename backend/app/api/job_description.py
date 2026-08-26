@@ -4,7 +4,7 @@ router = APIRouter()
 
 # Endpoint for getting JD from front end to send to openAI for analysis
 @router.post("/job-description/upload")
-def post_job_description(job_description: str):
+async def post_job_description(job_description: str):
     # Placeholder for actual analysis logic
     return {
         "message": "Job description received successfully",

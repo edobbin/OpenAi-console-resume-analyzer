@@ -21,13 +21,13 @@ function AnalyzerForm() {
 
     const formData = new FormData();
     formData.append("resume", resumeFile);
-    formData.append("jobDescription", jobDescription);
+    formData.append("job_description", jobDescription);
 
     // Example API call (replace with your actual endpoint)
     // const response = await fetch("/api/analyze", {
 
     try {
-      const response = await fetch(`${API_URL}/resume/upload`, {
+      const response = await fetch(`${API_URL}/analysis/upload`, {
         method: "POST",
         body: formData,
       });
@@ -38,9 +38,7 @@ function AnalyzerForm() {
         throw new Error("Failed to analyze resume");
         return;
       }
-
-      console.log("API Response:", data);
-      console.log("Parsed Resume:", data.parsed_text);
+      console.log("Resume analysis successful:", data);
     } catch (error) {
       console.error("Error analyzing resume:", error);
     }

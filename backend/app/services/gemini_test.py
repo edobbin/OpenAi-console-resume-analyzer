@@ -15,7 +15,7 @@ client = genai.Client()
 def generate_text():
     # Make a text generation request using the recommended model
     response = client.models.generate_content(
-        model="gemini-2.5-flash",
+        model="gemini-3.1-flash-lite",
         contents="what day of the week is it?"
     )
     

@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api import health, job_description, resumes
+from app.api import health, job_description, resumes, job_analysis, gemini_test
 
 app = FastAPI(
     title="MyATS API",
@@ -31,6 +31,8 @@ app.add_middleware(
 app.include_router(health.router, tags=["Health"])
 app.include_router(resumes.router, tags=["Resumes"])
 app.include_router(job_description.router, tags=["Job Descriptions"])
+app.include_router(job_analysis.router, tags=["Analysis"])
+app.include_router(gemini_test.router, tags=["Gemini Test"])
 
 @app.get("/")
 def root():
