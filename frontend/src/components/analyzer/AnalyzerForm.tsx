@@ -1,12 +1,15 @@
 import { useState } from "react";
 import ResumeUpload from "./ResumeUpload";
 import JobDescription from "./JobDescription";
+import { useNavigate } from "react-router-dom";
 import "./AnalyzerForm.css";
 
 function AnalyzerForm() {
   const API_URL = import.meta.env.VITE_API_URL;
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [jobDescription, setJobDescription] = useState<string>("");
+  const [analysisResult, setAnalysisResult] = useState<any>(null);
+  const navigate = useNavigate();
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -23,6 +26,8 @@ function AnalyzerForm() {
     formData.append("resume", resumeFile);
     formData.append("job_description", jobDescription);
 
+    navigate("/analyzing");
+
     // Example API call (replace with your actual endpoint)
     // const response = await fetch("/api/analyze", {
 
@@ -35,10 +40,15 @@ function AnalyzerForm() {
       const data = await response.json();
 
       if (!response.ok) {
+        navigate("/");
         throw new Error("Failed to analyze resume");
+        // Navigate back to the form page on error
         return;
       }
       console.log("Resume analysis successful:", data);
+
+      setAnalysisResult(data.gemini_analysis);
+      navigate("/results", { state: { analysis: analysisResult } });
     } catch (error) {
       console.error("Error analyzing resume:", error);
     }

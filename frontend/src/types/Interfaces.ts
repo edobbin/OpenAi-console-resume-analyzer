@@ -18,10 +18,16 @@ export interface SkillGap {
   evidence: string;
 }
 
+export interface AnalysisMetric {
+  name: string;
+  percentage: number;
+  rating: string;
+}
+
 export interface AnalysisResult {
   job_title: string;
   overall_rating: string;
-  metrics: ResultMetricProps[];
+  metrics: AnalysisMetric[];
   summary: string;
   strengths: string[];
   skill_gaps: SkillGap[];
