@@ -1,18 +1,11 @@
-import React from "react";
 import ResultCard from "./ResultCard";
 import "./ResultPage.css";
-import { getMetricRating, type ResultMetricProps } from "./Result_Metric";
+import { getMetricRating } from "./Result_Metric";
 import ResultSummary from "./ResultSummary";
+import ResultSuggestions from "./ResultSuggestions.tsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import type { AnalysisResult } from "../../types/Interfaces";
 
-const temporaryData: ResultMetricProps = {
-  name: "ATS Match",
-
-  percentage: 85,
-  rating: "Strong Match",
-  color: "metric-strong",
-};
 function ResultPage() {
   const location = useLocation();
   const navigate = useNavigate();
@@ -29,7 +22,7 @@ function ResultPage() {
     <div>
       <section className="hero-section">
         <h1>Analysis Report</h1>
-        <p className="eyebrow"> Temporary Data</p>
+        <p className="eyebrow">{analysis.job_title} </p>
       </section>
       <section>
         <ul className="result-metrics-list">
@@ -50,9 +43,14 @@ function ResultPage() {
         </ul>
       </section>
       <section className="result-summary">
-        <ResultSummary />
+        <ResultSummary summary={analysis.summary} />
       </section>
-      <section></section>
+      <section>
+        <ResultSuggestions suggestions={analysis.improvement_suggestions} />
+      </section>
+      <section>
+        <button onClick={() => navigate("/")}>Analyze a Resume</button>
+      </section>
     </div>
   );
 }

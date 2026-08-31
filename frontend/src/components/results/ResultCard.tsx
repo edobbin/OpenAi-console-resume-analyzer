@@ -1,4 +1,3 @@
-import React from "react";
 import "./ResultCard.css";
 import { type ResultMetricProps } from "./Result_Metric.ts";
 //{ name, percentage, rating, color }

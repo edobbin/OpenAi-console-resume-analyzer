@@ -8,7 +8,6 @@ function AnalyzerForm() {
   const API_URL = import.meta.env.VITE_API_URL;
   const [resumeFile, setResumeFile] = useState<File | null>(null);
   const [jobDescription, setJobDescription] = useState<string>("");
-  const [analysisResult, setAnalysisResult] = useState<any>(null);
   const navigate = useNavigate();
 
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -47,8 +46,7 @@ function AnalyzerForm() {
       }
       console.log("Resume analysis successful:", data);
 
-      setAnalysisResult(data.gemini_analysis);
-      navigate("/results", { state: { analysis: analysisResult } });
+      navigate("/results", { state: { analysis: data.gemini_analysis_result } });
     } catch (error) {
       console.error("Error analyzing resume:", error);
     }

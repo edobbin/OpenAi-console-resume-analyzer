@@ -30,6 +30,7 @@ Important rules:
 - If something is not clearly shown in the resume, treat it as missing or uncertain.
 - Base your evaluation only on the provided resume and job description.
 - Be honest but constructive.
+- When refering to myself use neutral non direct nouns and pronouns like you, yourself but not limited to those.
 """
 
 return_instructions = """
