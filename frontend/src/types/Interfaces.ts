@@ -1,5 +1,4 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { type ResultMetricProps } from "../components/results/Result_Metric";
 
 export interface ResumeData {
   filename: string;

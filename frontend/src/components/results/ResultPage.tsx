@@ -2,6 +2,8 @@ import ResultCard from "./ResultCard";
 import "./ResultPage.css";
 import { getMetricRating } from "./Result_Metric";
 import ResultSummary from "./ResultSummary";
+import ResultStrengths from "./ResultStrength.tsx";
+import ResultSkillGaps from "./ResultSkillGaps.tsx";
 import ResultSuggestions from "./ResultSuggestions.tsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import type { AnalysisResult } from "../../types/Interfaces";
@@ -47,6 +49,11 @@ function ResultPage() {
       </section>
       <section>
         <ResultSuggestions suggestions={analysis.improvement_suggestions} />
+      </section>
+
+      <section className="sections">
+        <ResultStrengths strengths={analysis.strengths} />
+        <ResultSkillGaps skillGaps={analysis.skill_gaps} />
       </section>
       <section>
         <button onClick={() => navigate("/")}>Analyze a Resume</button>

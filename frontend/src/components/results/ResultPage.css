@@ -24,3 +24,8 @@ ul {
 .result-metrics-list li {
   min-width: 0;
 }
+.sections {
+  margin-top: 20px;
+  gap: 20px;
+  display: flex;
+}
