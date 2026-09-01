@@ -24,8 +24,7 @@ header {
   height: 45px;
 }
 
-.label-input input,
-button {
+.label-input input {
   border: 1.5px solid #9d9e9e;
   border-radius: 8px;
   width: 100%;
