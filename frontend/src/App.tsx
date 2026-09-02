@@ -2,8 +2,8 @@ import AnalyzerForm from "./components/analyzer/AnalyzerForm";
 import ResultPage from "./components/results/ResultPage";
 import { Route, Routes } from "react-router-dom";
 import LoadingPage from "./components/loading/loadingPage";
-import LoginPage from "./components/auth/LoginPage";
-import SignUpPage from "./components/auth/SignUpPage";
+// import LoginPage from "./components/auth/LoginPage";
+// import SignUpPage from "./components/auth/SignUpPage";
 import AppLayout from "./components/layout/AppLayout";
 
 function App() {
