@@ -1,7 +1,9 @@
-import React from "react";
 import "./ResultSummary.css";
+interface SummaryProp {
+  summary: string;
+}
 
-function ResultSummary(props) {
+function ResultSummary(props: SummaryProp) {
   return (
     <div className="ResultSummary-container">
       <h2>Analysis Summary</h2>
