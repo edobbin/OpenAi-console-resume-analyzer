@@ -13,10 +13,11 @@ function App() {
 
       <main className="page-container">
         <Routes>
-          <Route path="/" element={<LoginPage />} />
-          <Route path="/" element={<SignUpPage />} />
+          {/* <Route path="/" element={<LoginPage />} />
+          <Route path="/signup" element={<SignUpPage />} /> */}
           <Route element={<AppLayout />}>
-            <Route path="/analyzer" element={<AnalyzerForm />} />
+            <Route path="/" element={<AnalyzerForm />} />
+            {/* <Route path="/analyzer" element={<AnalyzerForm />} /> */}
             <Route path="/analyzing" element={<LoadingPage />} />
             <Route path="/results" element={<ResultPage />} />
           </Route>
